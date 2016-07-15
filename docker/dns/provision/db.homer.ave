@@ -1,0 +1,17 @@
+;
+$TTL	60
+@	IN	SOA	ns.homer.ave. admin.homer.ave. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+homer.ave.		IN	NS		ns.homer.ave.
+homer.ave.		IN	A		10.250.3.20
+ns				IN	A		10.250.3.20
+wedge			IN	CNAME	ns.homer.ave.
+bladerunner1	IN	A		10.250.3.21
+bladerunner2	IN	A		10.250.3.22
+bladerunner3	IN	A		10.250.3.23
+bladerunner4	IN	A		10.250.3.24

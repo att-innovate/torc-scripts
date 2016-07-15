@@ -1,0 +1,20 @@
+options {
+	directory "/var/cache/bind";
+
+    // we use verisign
+    forwarders {
+        64.6.64.6;
+    };
+
+    // disable dnssec for consul
+    dnssec-enable no;
+    dnssec-validation no;
+
+    // allow recursion from localnet and all 10 subnet
+    allow-recursion { localnets; 10.0.0.0/8; };
+
+    auth-nxdomain no;    # conform to RFC1035
+    listen-on-v6 { any; };
+};
+
+include "/etc/bind/named/consul.conf";
