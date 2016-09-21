@@ -64,18 +64,15 @@ ENV PATH $PATH:$SPARK_HOME/bin:/usr/python/bin/
 
 # Install smartscaling
 ENV SMART_SCALING_DIR /smartscaling
-ENV JSON_DIR /files
 
 RUN mkdir -p $SMART_SCALING_DIR/src
 RUN mkdir -p $SMART_SCALING_DIR/project
-RUN mkdir -p /files
 
 ADD src/ $SMART_SCALING_DIR/src
 ADD lib/ $SMART_SCALING_DIR/lib
 
 COPY build.sbt $SMART_SCALING_DIR/
 COPY project/assembly.sbt $SMART_SCALING_DIR/project/
-COPY files/dns-sl3.json $JSON_DIR/
 
 RUN cd $SMART_SCALING_DIR && sbt assembly
 
