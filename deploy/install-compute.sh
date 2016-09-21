@@ -46,6 +46,9 @@ fi
 # Install gcc
 apt-get -y install git wget libtool build-essential pkg-config autoconf
 
+# Install ntp
+apt-get -y install ntp
+
 # Install network tools
 apt-get -y install bridge-utils ipset
 
