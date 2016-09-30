@@ -7,7 +7,7 @@ RUN apt-get install -y curl
 RUN apt-get install -y build-essential
 RUN apt-get install -y libssl-dev openssh-client git
 
-RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --revision=1.9.0 --yes --disable-sudo
+RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --revision=1.12.0 --yes --disable-sudo
 
 VOLUME /project
 WORKDIR /project
