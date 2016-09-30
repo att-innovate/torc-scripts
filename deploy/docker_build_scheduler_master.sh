@@ -16,6 +16,8 @@ docker run -v $SCHEDULER_DIR:/project/ cargo build
 rm $DOCKER_DIR/provision/torc_scheduler
 cp $SCHEDULER_DIR/target/debug/torc_scheduler $DOCKER_DIR/provision/
 
+cp $SCHEDULER_DIR/config/*.yml $DOCKER_DIR/provision/
+
 cd $DOCKER_DIR
 docker build -t torc-scheduler .
 
