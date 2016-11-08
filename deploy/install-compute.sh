@@ -101,11 +101,11 @@ fi
 if [ ! -f ~/calicoctl ]
 then
     cd ~
-    wget http://www.projectcalico.org/builds/calicoctl
+    wget https://github.com/projectcalico/calico-containers/releases/download/v0.23.0/calicoctl
     chmod +x calicoctl
     
-    docker pull calico/node:latest
-    docker pull calico/node-libnetwork:latest
+    docker pull calico/node:v0.23.0
+    docker pull calico/node-libnetwork:v0.9.0
 fi
 
 # do some cleanup
