@@ -38,6 +38,7 @@ function start_slave {
 
     # set the arguments for mesos slave
     echo ${MASTER} > /etc/mesos/zk
+    echo ERROR > /etc/mesos/logging_level
     echo ${MY_IP} > /etc/mesos-slave/ip
     echo $MY_IP > /etc/mesos-slave/hostname
     echo host:${MY_IP} > /etc/mesos-slave/attributes
@@ -70,6 +71,7 @@ function start_master {
     echo $MY_IP > /etc/mesos-master/hostname
     echo "zk://localhost:2181/mesos" > /etc/mesos/zk
     echo in_memory > /etc/mesos/registry
+    echo ERROR > /etc/mesos/logging_level
     echo /var/lib/mesos > /etc/mesos-slave/work_dir
     echo torc > /etc/mesos-master/cluster
     echo 1 > /etc/mesos-master/quorum
